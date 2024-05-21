@@ -1,29 +1,78 @@
-% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Universidad Tecnológica de Pereira
+% Facultad de Ingenierías
+% Maestría en Ingeniería de Sistemas y Computación
+%
+% Formato para la presentación de informe final de trabajo de grado
+% Versión 0.0.1 2021/10/15
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\documentclass[12pt]{report}
 
-\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[letterpaper, margin=30mm]{geometry}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{hyperref}
+\DeclareUnicodeCharacter{0301}{\'{e}}
 
-\title{Simple Sample} % Sets article title
-\author{My Name} % Sets authors name
-\date{\today} % Sets date for date compiled
+\usepackage[
+sorting=none
+]{biblatex}
 
-% The preamble ends with the command \begin{document}
-\begin{document} % All begin commands must be paired with an end command somewhere
-\maketitle % creates title using information in preamble (title, author, date)
+\addbibresource{biblio.bib} %Imports bibliography file
 
-\section{Hello World!} % creates a section
+\graphicspath{{Figuras/}}
 
-\textbf{Hello World!} Today I am learning \LaTeX. %notice how the command will end at the first non-alphabet charecter such as the . after \LaTeX
-\LaTeX{} is a great program for writing math. I can write in line math such as $a^2+b^2=c^2$ %$ tells LaTexX to compile as math
-. I can also give equations their own space:
-\begin{equation} % Creates an equation environment and is compiled as math
-  \gamma^2+\theta^2=\omega^2
-\end{equation}
-If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).
-Also notice how even though I hit enter after that sentence and here $\downarrow$
-\LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={mamativa},
+    pdfpagemode=FullScreen,
+}
+    
+\urlstyle{same}
 
-For a new essay I can leave a blank space in my code.
+\begin{document}
 
-\end{document} % This is the end of the document
+
+\newcommand{\titulo}{Documentação do Quiz para o PlacaMãe.org}
+\newcommand{\nombreestudiante}{Diego Nery\\ Eduardo Henrique \\Esteffane Menezes\\ Iasmim Holanda \\Milenia Rosendo\\Rayanne Cruz \\ Ismael Mascarenhas\\ Yan Lucas \\}
+\newcommand{\fecha}{\date{\today}}
+
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=65mm]{Figuras/unicap.png}\par
+	\vspace{1cm}
+	{\LARGE\bfseries \titulo \par}
+	\vfill
+	{\large Relatório Técnico de Conclusão de Curso da turma\\de Sistemas Para Internet\par
+
+	\vfill
+	Autores:\par\vspace{2mm}
+	\nombreestudiante\par
+    \vfill
+    Universidade Católica de Pernambuco\par
+    Sistemas para Internet \\ Data de Emissão: 07/05/2024
+ \par}
+\end{titlepage}
+
+\tableofcontents
+\listoffigures
+% \listoftables
+
+\include{conteudo/Intro}
+\include{conteudo/TrabRel}
+\include{conteudo/Metodologia}
+\include{conteudo/Resultados}
+\include{conteudo/Conclusao}
+
+\printbibliography[heading=bibintoc, title={Referencias}]
+
+
+\end{document}
