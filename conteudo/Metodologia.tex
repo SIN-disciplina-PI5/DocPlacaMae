@@ -2,13 +2,10 @@
 \section{Detalhes Técnicos}
 \label{sec:tech}
 
-Esta aplicação foi desenvolvida utilizando uma arquitetura de software conhecida como MVC((Model-View-Controller).
-O Model é responsável pelo armazenamento, atualização e exclusão das informações fornecidas pelas usuárias cadastradas na plataforma.
-Na View, ficarão todos os arquivos referentes a interface gráfica.
-No Controller ficam os arquivos que determinam as regras de negócios do nosso produto.
+A nossa aplicação foi criada a caráter informativo, com textos e elementos visuais atrativos, onde foi desenvolvida inteiramente utilizando frameworks Next.js. Logo, por ser uma interface com estruturas lógicas, não possui a nescessidade da construção de uma configuração de back-end, visto que não haverá nenhum dado externo armazenado. Portanto, o usuário poderá navegar pela plataforma sem precisar fazer cadastro, login ou fazer a inserção de qualquer outro tipo de dado.
 
 \subsection{Front-End}
-O Front-end é implementado em \cite{Next.Js} e segue descrito na Figura \ref{fig:logicFront}
+O Front-end é implementado em \cite{Next.Js} como mostra a Figura \ref{fig:logicFront}
 
 \begin{figure}[h!]
     \centering
@@ -17,36 +14,34 @@ O Front-end é implementado em \cite{Next.Js} e segue descrito na Figura \ref{fi
     \label{fig:logicFront}
 \end{figure}
 
-Sobre os componentes do sistema:
+A plataforma apresenta uma tela inicial onde exibe o material de apoio para introduzir o conteúdo para estudo e aprendizado. Nesta tela também é apresentado um botão de denuncia, de extrema importância para o acionamento imediato do suporte nescessário par a situação. E a área também dispões de uma barra de navegação lateral que aponta os componentes a seguir:
+
 \begin{itemize}
-  \item Esta plataforma trata-se de um container com React Router ( BrowserRouter). A partir do estado(state), a barra de navegação exibirá os respectivos itens.
-  \item  Login e Register contam com formulários para envio de dados (com suporte da lib react-validation). Ambos chamam métodos de auth.service para realizar a solicitação de login e registro.
-  \item Os métodos do auth.service usam o Axios para fazer solicitações HTTP para o \textit{storage} local.
-   \item Home é o componente público de acesso a todos os usuários.
-   \item Área Doadora é o componente que é acessado após a ação de login ser bem-sucedida. É nele que são exibidas as informações da usuária.
-   \item boardUser, boardModerator, boardAdmin são componentes que serão exibidos de acordo com o estado user.roles. Nesses componentes, o user.service é usado para acessar recursos protegidos da API da Web.
-   \item O user.service se utiliza da função auth-header para auxiliar a adição do Jason Web Token(JWT) ao cabeçalho HTTP. O auth-header, por sua vez, retorna um objeto contendo o JWT do usuário conectado no momento do armazenamento local.
+
+
+    \item Área do questionário, onde o usuário vai poder fazer a interação gameficada baseado no conteúdo apresentado na plataforma. O quiz apresenta três níveis: fácil, médio e dificil, desta forma o usuário irá fixar melhor o conteúdo apresentado na plataforma. 
+ 
+    \item  Área de certificação, após a conclusão do quiz, o usuário poderá receber o certificado de acordo com a quantidade de acertos. Para receber o certificado o aluno precisa acertar mais de 7 questões. Criamos um algoritmo de verificação onde foram setadas as dificuldades em uma variável, em seguida adiocionamos uma codição no código que análisa a quantidade de acertos no quiz. 
+    Caso o usuário não atinja a pontuação necessária, ele será direcionado para uma página onde será dado a opção de poder tentar realizar o quiz novamente. 
+    
+
+    \item Na área de indicações e materiais de estudo o usuário vai encontrar links de podcasts, sites, documentos literários e alguns materiais de estudo para o aprofundamento no conteúdo.
+    
+    \item Área de saiba mais que faz uma apresentação um pouco mais profunda de todo o contexto trazendo um pouco da história da empresa Placamãe.org, surgimento, trajetório e quais os impactos dentro da sociedade.
+   
+   
 \end{itemize}
+
 \clearpage
 
-\subsection{Back-End}
-A parte de Back-end é feito em \cite{Node.js}, \cite{Express} e \cite{Sequelize}. De acordo com a Figura \ref{fig:logicBack}
+\subsubsection{Back-End}
+Nossa plataforma tem caráter informativo, então, não se faz nescessário utilizar um sistema back-end pois não existe tráfego de dados. 
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Figuras/Back.pdf}
-    \caption{Estrutura lógica do Back-end composta por Node.js, Express, Sequelize e Azure}
-    \label{fig:logicBack}
-\end{figure}
 
-Através da utilização de rotas expressas, as solicitações HTTP que correspondem a determinadas rotas passam por uma camada de verificação chamada Middleware de CORS antes de alcançarem a camada de segurança.
-A camada de segurança é composta por:
+
 \begin{itemize}
-  \item Middleware de autenticação JWT: responsável por verificar a validade da inscrição e autenticidade do token.
-  \item Middleware de autorização: verifica as permissões do usuário por meio de informações registradas no banco de dados.
+ 
 \end{itemize}
-Caso algum erro seja detectado por esses middlewares, uma mensagem adequada é enviada como resposta HTTP.
-Os controladores, por sua vez, estabelecem a interação com o banco de dados MySQL utilizando o Sequelize e enviam respostas HTTP ao cliente, como tokens de autenticação, informações do usuário e dados específicos com base em funções de acesso.
 
 
 
