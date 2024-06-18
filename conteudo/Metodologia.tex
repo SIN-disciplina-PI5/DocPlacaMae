@@ -62,25 +62,33 @@ Nossa plataforma tem caráter informativo, então, não se faz nescessário util
 \label{sec:tech}
 
 
-\subsection{Back-End}
-Nosso Back-end é feito em \cite{Node.js}, \cite{Express} e \cite{Sequelize}. De acordo com a Figura \ref{fig:logicBack}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Figuras/Back.pdf}
-    \caption{Estrutura lógica do Back-end composta por Node.js, Express, Sequelize e Azure}
-    \label{fig:logicBack}
-\end{figure}
-
-Através da utilização de rotas expressas, as solicitações HTTP que correspondem a determinadas rotas passam por uma camada de verificação chamada Middleware de CORS antes de alcançarem a camada de segurança.
-A camada de segurança é composta por:
+\subsection{Requisitos Não Funcionais:}
 \begin{itemize}
-  \item Middleware de autenticação JWT: responsável por verificar a validade da inscrição e autenticidade do token.
-  \item Middleware de autorização: verifica as permissões do usuário por meio de informações registradas no banco de dados.
+\item O site é seguro, utilizando protocolos HTTPS.
+\item O site é acessível, seguindo as diretrizes WCAG. 
+\item O site está esponsivo para dispositivos móveis e que suas fontes de informações são verificadas e de uso comprovado academicamente
 \end{itemize}
-Caso algum erro seja detectado por esses middlewares, uma mensagem adequada é enviada como resposta HTTP.
-Os controladores, por sua vez, estabelecem a interação com o banco de dados MySQL utilizando o Sequelize e enviam respostas HTTP ao cliente, como tokens de autenticação, informações do usuário e dados específicos com base em funções de acesso.
+\clearpage
 
+\section{Descrição Geral}
+\label{sec:descricao}
+Para o projeto final, foi proposto o desafio de desenvolver um site interativo, enriquecido com um jogo, com o objetivo de ser educativo, envolvente e um canal para denúncias. Este site tem como meta auxiliar professores, alunos e famílias a compreenderem e combaterem o cyberbullying, alertando sobre os riscos e as ações que podem levar a incidentes de bullying. \\
+
+O cyberbullying é um problema crescente na era digital, com consequências potencialmente devastadoras para os indivíduos afetados. Através deste projeto, espera-se fornecer uma ferramenta valiosa para combater este problema, educando e informando os usuários sobre o cyberbullying e fornecendo um meio seguro e anônimo para denunciar incidentes de bullying.\\
+
+Este projeto está alinhado à Agenda 2030 da ONU, que estabelece 16 Objetivos de Desenvolvimento Sustentável (ODS). Em particular, o projeto se concentra no ODS 3, que é voltado para a saúde e o bem-estar. Este objetivo enfatiza a importância de garantir vidas saudáveis e promover o bem-estar para todos, em todas as idades. Ao combater o cyberbullying, este projeto contribui para este objetivo, ajudando a criar um ambiente online mais seguro e saudável para todos.\\
+
+A plataforma foi projetada para facilitar todos os passos que envolvem esse processo, além de oferecer funcionalidades que visam incentivar o engajamento de novos indivíduos na luta contra o cyberbullying. A plataforma online será dividida em quatro seções principais, cada uma com suas próprias funcionalidades, que serão descritas a seguir.
+
+\begin{itemize}
+    \item A seção "Questionário" apresentará perguntas de níveis fácil, médio e difícil sobre o tema, baseadas em ebooks, podcasts e artigos científicos. Esta seção também incluirá exemplos práticos de situações de cyberbullying no dia a dia, com um total de 13 questões para cada nível. O objetivo desta seção é testar o conhecimento do usuário sobre o tema.
+
+    \item A seção "Indicações/Materiais de Estudo" disponibilizará ebooks gratuitos fornecidos pelo placamae.org, podcasts recomendados por especialistas no assunto, bem como artigos científicos para auxiliar nos estudos e pesquisas relacionadas ao tema. Esta seção é uma rica fonte de informações e recursos que os usuários podem usar para aprofundar seu conhecimento sobre o cyberbullying.
+    \item A seção "Saiba Mais" fornecerá informações detalhadas sobre a história do placamae,esta seção oferece uma visão abrangente sobre esta organização que busca conscientizar a todos nos meios digitais. É uma oportunidade para os usuários aprenderem mais sobre a organização por trás desta iniciativa e seu compromisso com a promoção de um ambiente online seguro
+
+\end{itemize}
+
+Como pode ser observado, a plataforma funcionará como um facilitador entre professores, alunos e famílias, com o objetivo de auxiliar no combate a um problema tão relevante como o cyberbullying, não só em uma cidade específica, mas em todo o país e até mesmo globalmente. Este projeto representa um esforço significativo para usar a tecnologia como uma força para o bem, fornecendo aos usuários as ferramentas e informações necessárias para combater o cyberbullying. A expectativa é que esta plataforma possa ter um impacto positivo na vida dos usuários e na comunidade online como um todo, contribuindo para um ambiente digital mais seguro e inclusivo.
 
 
 \chapter{Funcionalidades e Casos de Uso}
