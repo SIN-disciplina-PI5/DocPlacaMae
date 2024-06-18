@@ -125,25 +125,46 @@ Como pôde ser percebido, nossa plataforma funcionará como facilitadora entre a
 \end{figure}
 
 \subsection{Caso de Uso 1}
-Objetivo da usuária: Realizar Cadastro e conseguir acessar área da doadora para então visualizar as seções disponíveis.
+Acesso ao conteúdo educacional:O usuário explora os recursos educativos disponíveis sobre o projeto Placa Mãe, incluindo ebooks, podcasts e artigos relacionados.
 
-Como apresentado na Figura \ref{fig:cs1} Após o processo de cadastro, a usuária poderá fazer o login na página inicial e então poderá acessar a área da doadora. Com o intuito de facilitar a experiência de se tornar doadora, essa parte da ferramenta irá expor de forma simples e direta todas as seções disponíveis: Como doar, Bancos de Leite, Meus Registros, Mama Mídia e Minhas Conquistas. 
+
+Como apresentado na Figura \ref{fig:cs1} o usuário navega pela seção de materiais de apoio no site. Ele encontra e acessa diferentes tipos de conteúdo educativo, como ebooks, podcasts e artigos. O sistema organiza os materiais de forma clara e acessível, permitindo ao usuário aprender mais sobre o projeto Placa Mãe através de diferentes formatos de conteúdo. Os diferentes formatos de conteúdo permitem ao usuário explorar o projeto Placa Mãe de maneiras variadas, adaptando-se ao seu estilo de aprendizado preferido.Os materiais são periodicamente atualizados com novas informações, mantendo os usuários informados sobre os últimos desenvolvimentos e conquistas do projeto. A organização clara dos materiais facilita a localização de conteúdos específicos, incentivando uma exploração mais profunda e eficiente do site.
 
 \subsection{Caso de Uso 2}
-Objetivo da usuária: Acessar site e inserir em seção com este fim, informações referentes a sua última doação de leite.
+Realização do Quiz: O usuário decide testar seus conhecimentos através do quiz disponível em três níveis de dificuldade: fácil, médio e difícil.
 
-Como apresentado na Figura \ref{fig:cs2}, ao efetuar o login, uma das seções que a usuária terá acesso é “Minhas Doações”. Aqui, a doadora poderá registrar informações relacionadas a sua última doação, como a data e a quantidade de leite doado e a unidade para qual doou. Com os dados inseridos, o aplicativo então irá fornecer pontos de acordo com a quantidade de leite doado.
+.
+
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.45\textwidth]{cs2.jpg}
+%     \caption{Caso de Uso 2}
+%     \label{fig:cs2}
+% \end{figure}
+
+Como apresentado na Figura \ref{fig:cs2}, após acessar a seção de Materiais de Estudo e absorver o conteúdo apresentado, o usuário é direcionado à área de quiz, onde pode selecionar entre os níveis de dificuldade: fácil, médio e difícil, para iniciar o jogo de perguntas e respostas com base em todo o conteúdo disponível na plataforma.
+
+O componente Quiz em React com Next.js carrega dinamicamente diferentes conjuntos de questões (fáceis, médias e difíceis) com base na dificuldade selecionada na URL usando useEffect. Ele gerencia estados para controlar a opção selecionada pelo usuário, verifica se a resposta está correta após a confirmação e permite navegar entre as questões. Após responder todas as questões, redireciona o usuário para páginas de certificado de acordo com o desempenho ou para uma página de falha. Durante a renderização, exibe visualmente as opções de resposta selecionadas e é projetado para ser modular e facilmente expansível, mantendo uma experiência de usuário interativa e educativa.
 
 \subsection{Caso de Uso 3}
-Objetivo da usuária: Acessar site e a partir de seção que lista todos os Bancos de leite da cidade, encontrar o que fica mais próximo a sua casa.
+Objetivo do Usuário: No projeto, desenvolvemos uma área de questionário em Next.js, utilizando Next Router para navegação dinâmica entre os níveis, vinculados a subseções específicas de Material de Apoio/Indicações, com páginas dinâmicas e componentes reutilizáveis para uma experiência de usuário intuitiva e consistente.
 
-Após o processo de login, a usuária poderá conferir informações sobre os bancos de leite da região metropolitana do Recife através da seção “Bancos de Leite”, como apresentado na Figura \ref{fig:cs3}. A nutriz poderá utilizar a ferramenta de busca para filtrar os bancos de acordo com o bairro e encontrar o mais próximo de sua moradia. Com o banco selecionado, é possível conferir todas as informações a respeito do local.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.45\textwidth]{Figuras/cs3.pdf}
-    \caption{Caso de Uso 3}
-    \label{fig:cs3}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.45\textwidth]{cs3.jpg}
+%     \caption{Caso de Uso 3}
+%     \label{fig:cs3}
+% \end{figure}
+
+Conforme ilustrado na Figura \ref{fig:cs3}, após a seleção da área de questionário, o usuário pode escolher entre diferentes níveis de dificuldade (fácil, médio, difícil). O questionário, composto por um total de 39 questões, está dividido conforme esses níveis, cada um vinculado a uma subseção específica da área de Material de Apoio/Indicações, permitindo ao usuário testar e reforçar o conhecimento adquirido através dos materiais de estudo.
+
+\subsection{Caso de Uso 4} 
+Objetivo do Usuário: Ao acessar o site, o usuário deseja visualizar a seção Saiba Mais na barra lateral.\\
+
+Conforme ilustrado na Figura \ref{fig:cs4}, Após a seleção da seção "Saiba Mais", desenvolvida em Next.js, o usuário é apresentado a informações detalhadas sobre a história do placamae.org, incluindo dados sobre sua fundação, objetivos, estratégias, métodos de atuação, conquistas e membros. Esta seção fornece uma visão abrangente da organização, dedicada à conscientização nos meios digitais. A plataforma é projetada para facilitar a interação entre professores, alunos e famílias no combate ao cyberbullying, com impacto potencialmente nacional e global, utilizando tecnologia para promover um ambiente digital mais seguro e inclusivo.\\
+
+A barra de navegação lateral (SideBar), implementada com Next.js e @heroicons/react, facilita a navegação entre as principais seções do site: Página Inicial, Quiz, Indicações e Saiba Mais.
+
 
 
 \chapter{Diagrama de Classes}
