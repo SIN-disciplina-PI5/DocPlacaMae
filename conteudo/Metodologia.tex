@@ -46,35 +46,21 @@ Nossa plataforma tem caráter informativo, então, não se faz nescessário util
 
 
 \chapter{Requisitos funcionais e não funcionais}
-\section{Detalhes Técnicos}
+\section{Requisitos Funcionais:}
+\begin{itemize}
+  \item O site permite a navegação entre as seções mencionadas no menu.
+  \item  Os quizzes são divididos em categorias de dificuldade (fácil, média e difícil).
+  \item O site fornece materiais de estudo relacionados aos quizzes.
+   \item Home é o componente público de acesso a todos os usuários.
+   \item Há uma funcionalidade de denúncia acessível em todo o site.
+   \item O site exibe recomendações de livros, podcasts e artigos científicos sobre ciberbullying.
+   \item  Links para redes sociais são funcionais onde direcionam para as páginas corretas.
+\item Há um e-mail de contato visível em todo o site.
+\item Informações sobre consultoria, palestras e cursos estão disponíveis.
+\end{itemize}
+
 \label{sec:tech}
 
-A Aplicação foi desenvolvida utilizando a arquitetura de software MVC((Model-View-Controller).
-O Model é responsável pelo armazenamento, atualização e exclusão das informações fornecidas pelas usuárias cadastradas na plataforma.
-Na View, ficarão todos os arquivos referentes a interface gráfica.
-No Controller ficam os arquivos que determinam as regras de negócios do nosso produto.
-
-\subsection{Front-End}
-O Front-end é implementado em \cite{React} e está descrito na Figura \ref{fig:logicFront}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1.0\textwidth]{Figuras/Frontpdf.pdf}
-    \caption{Estrutura lógica do Front-End composta por React}
-    \label{fig:logicFront}
-\end{figure}
-
-Sobre os componentes do sistema:
-\begin{itemize}
-  \item O App trata-se de um container com React Router ( BrowserRouter). A partir do estado(state), a barra de navegação exibirá os respectivos itens.
-  \item  Login e Register contam com formulários para envio de dados (com suporte da lib react-validation). Ambos chamam métodos de auth.service para realizar a solicitação de login e registro.
-  \item Os métodos do auth.service usam o Axios para fazer solicitações HTTP para o \textit{storage} local.
-   \item Home é o componente público de acesso a todos os usuários.
-   \item Área Doadora é o componente que é acessado após a ação de login ser bem-sucedida. É nele que são exibidas as informações da usuária.
-   \item boardUser, boardModerator, boardAdmin são componentes que serão exibidos de acordo com o estado user.roles. Nesses componentes, o user.service é usado para acessar recursos protegidos da API da Web.
-   \item O user.service se utiliza da função auth-header para auxiliar a adição do Jason Web Token(JWT) ao cabeçalho HTTP. O auth-header, por sua vez, retorna um objeto contendo o JWT do usuário conectado no momento do armazenamento local.
-\end{itemize}
-\clearpage
 
 \subsection{Back-End}
 Nosso Back-end é feito em \cite{Node.js}, \cite{Express} e \cite{Sequelize}. De acordo com a Figura \ref{fig:logicBack}
